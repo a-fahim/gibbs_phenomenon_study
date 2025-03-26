@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='gibbs_phenomenon_study',
+    name='gibbsphen',
     version='0.1',
     author='Ali Fahim',
     author_email='a.fahim@gmail.com',

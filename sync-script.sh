@@ -7,7 +7,7 @@ GDRIVE_PATH="/mnt/i/My Drive/programming/_00_gibbs_phenomenon_studying"
 # Function to sync from WSL to Google Drive
 sync_to_gdrive() {
   echo "Syncing from WSL to Google Drive..."
-  rsync -avz --progress --delete --no-perms --exclude="archives" --exclude=.git --exclude="*.egg-info" "$WSL_PATH/" "$GDRIVE_PATH/"
+  rsync -avz --progress --delete --no-perms --exclude=".venv" --exclude="archives" --exclude=.git --exclude="*.egg-info" "$WSL_PATH/" "$GDRIVE_PATH/"
   # if [ $? -ne 0 ]; then
   #   echo "rsync encountered errors, but continued."
   # fi
@@ -17,7 +17,7 @@ sync_to_gdrive() {
 # Function to sync from Google Drive to WSL
 sync_to_wsl() {
   echo "Syncing from Google Drive to WSL..."
-  rsync -avz --progress --delete --no-perms --exclude="archives" --exclude=.git --exclude="*.egg-info" "$GDRIVE_PATH/" "$WSL_PATH/"
+  rsync -avz --progress --delete --no-perms --exclude=".venv" --exclude="archives" --exclude=.git --exclude="*.egg-info" "$GDRIVE_PATH/" "$WSL_PATH/"
   echo "Sync to WSL completed."
 }
 
